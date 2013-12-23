@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TasksControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+	test "has a 'new' action" do
+		get :new
+	end
 end
