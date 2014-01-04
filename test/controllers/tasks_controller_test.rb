@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class TasksControllerTest < ActionController::TestCase
-	test "has a 'new' action" do
+	test "'new' action displays form" do
 		get :new
+		assert_select 'form'
 	end
 
 	test "'create' action creates a new task" do
