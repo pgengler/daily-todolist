@@ -11,4 +11,9 @@ class TasksControllerTest < ActionController::TestCase
 			post :create, task: { summary: "A sample task" }
 		end
 	end
+
+	test "'index' view lists all tasks" do
+		get :index
+		assert_select 'li.task', Task.count
+	end
 end
