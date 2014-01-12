@@ -8,6 +8,10 @@ class TasksController < ApplicationController
 		@tasks = Task.all
 	end
 
+	def new
+		@task = Task.new
+	end
+
 	private
 
 	def task_params
