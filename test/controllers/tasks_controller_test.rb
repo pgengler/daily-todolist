@@ -21,4 +21,13 @@ class TasksControllerTest < ActionController::TestCase
 		get :index
 		assert_select 'li.task', Task.count
 	end
+
+	test "'update' saves changes to a task" do
+		new_summary = "This is a changed summary"
+		task = tasks(:one)
+		put :update, id: task, task: { summary: new_summary }
+
+		after = Task.find(task.id)
+		assert_equal new_summary, after.summary
+	end
 end
