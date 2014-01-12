@@ -4,6 +4,10 @@ class TasksController < ApplicationController
 		redirect_to new_task_path
 	end
 
+	def edit
+		@task = Task.find(params[:id])
+	end
+
 	def index
 		@tasks = Task.all
 	end
