@@ -39,3 +39,11 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'sorcery'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
+group :test do
+  gem 'capybara'
+end
